@@ -19,19 +19,13 @@ fn rot13(input: &str) -> String {
     for c in input.chars() {
         let append_char: char;
         if c.is_ascii_uppercase() {
-            if let Some(index) = uppercase.find(c) {
-                let index = (index + 13) % 26;
-                append_char = uppercase[index..].chars().next().unwrap();
-            } else {
-                panic!("This shouldn't be happening!");
-            }
+            let index = uppercase.find(c).expect("This shouldn't be happening!");
+            let index = (index + 13) % 26;
+            append_char = uppercase[index..].chars().next().unwrap();
         } else if c.is_ascii_lowercase() {
-            if let Some(index) = lowercase.find(c) {
-                let index = (index + 13) % 26;
-                append_char = lowercase[index..].chars().next().unwrap();
-            } else {
-                panic!("This shouldn't be happening!");
-            }
+            let index = lowercase.find(c).expect("This shouldn't be happening!");
+            let index = (index + 13) % 26;
+            append_char = lowercase[index..].chars().next().unwrap();
         } else {
             append_char = c;
         }
