@@ -10,7 +10,7 @@ It takes any number of command-line arguments, all of which are treated as text 
 
 The tool only encodes and decodes ASCII alphabetical characters. All other characters in the input are left untouched.
 
-It maintains casing -- uppercase letters stay uppercase, and lowercase letters stay lowercase. 
+It maintains casing – uppercase letters stay uppercase, and lowercase letters stay lowercase. 
 
 ### Examples
 
